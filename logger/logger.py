@@ -1,7 +1,7 @@
 """
 logger.py
 ---------
-Central logging configuration for the BIM-GIS pipeline.
+Central logging configuration.
 Provides a consistent logger with rotating file output and console output.
 """
 
@@ -14,7 +14,7 @@ BASE_PATH = Path(__file__).resolve().parent.parent
 
 _logger_instance = None
 
-def setup_logger():
+def setup_logger(name="PythonToolbox"):
     """
     Sets up the central logger for the project if not already done.
     Implements idempotency to prevent duplicate log entries on multiple imports.
@@ -33,11 +33,11 @@ def setup_logger():
     log_dir.mkdir(parents=True, exist_ok=True)
     log_file = log_dir / "app.log"
 
-    logger = logging.getLogger("Rainwater-Drainage-MCDA")
-    level_name = os.getenv("RAINWATER_DRAINAGE_MCDA_LOG_LEVEL", "INFO").upper()
+    logger = logging.getLogger(name)
+    level_name = os.getenv("LOG_LEVEL", "INFO").upper()
     level = getattr(logging, level_name, None)
     if level is None:
-        print(f"warning : Unknown loglevel {level_name}, use INFO")
+        print(f"warning : Unknown loglevel '{level_name}', use INFO")
         level = logging.INFO
     logger.setLevel(level)
 
