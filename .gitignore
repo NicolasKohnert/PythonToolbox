@@ -216,5 +216,9 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# Log directory
+logs/
+*.log
+
 # Streamlit
 .streamlit/secrets.toml
