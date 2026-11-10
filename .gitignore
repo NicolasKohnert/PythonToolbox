@@ -220,5 +220,7 @@ __marimo__/
 logs/
 *.log
 
+#Local BIM test files (do not commit large .ifc models)
+*.ifc
 # Streamlit
 .streamlit/secrets.toml
