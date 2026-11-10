@@ -21,12 +21,12 @@ logger = setup_logger()
 logger.info("Pipeline execution started.")
 
 
-*2. IFC Extractor (extractor/)*
+### 2. IFC Extractor (extractor/)*
 A high-performance, memory-safe single-pass ingestion layer using IfcOpenShell.
 * *File:* extractor/ifc_extractor.py
 * *Features:* $O(n)$ generator-based streaming (yield), per-entity fault isolation, and optional single-pass property/quantity parsing.
 
-Quick Start / Usage:
+###Quick Start / Usage:
 
 ```python
 from extractor.ifc_extractor import IfcExtractor
