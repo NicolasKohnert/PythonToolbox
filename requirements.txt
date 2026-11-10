@@ -1,2 +1,3 @@
 # PythonToolbox Dependencies
-# Currentlyusing standart libraty only.
+# IFC Extractor Requirements
+ifcopenshell>=0.7.0
